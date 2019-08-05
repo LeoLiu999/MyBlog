@@ -14,7 +14,7 @@ permalink: /posts/:title/
 texture:
   title: Leo的博客
   tagline: 软件攻城狮|PHP、Python
-  date_format: "%Y-%M-%d"
+  date_format: "%Y-%m-%d"
   style: blue
   showNav: false
   showPicker: false
