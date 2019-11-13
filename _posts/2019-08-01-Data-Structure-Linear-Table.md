@@ -1,10 +1,10 @@
 ---
 layout : post
-title :  数据结构（二）：线性表
+title :  数据结构：线性表
 date : 2019-08-01
 categories: 数据结构 线性表
 permalink : DataStructure/LinearTable.html
-#description: 数据结构的基本概念啊
+#description: 数据结构的基本概念
 
 ---
 
@@ -313,7 +313,7 @@ permalink : DataStructure/LinearTable.html
        ```
        
     3. **双链表** 
-        
+      
         概念：一种有前趋结点和后继结点的链表。前趋指向前一个结点，后继指向后一个结点。
         
         ```
@@ -358,6 +358,103 @@ permalink : DataStructure/LinearTable.html
         ```
         
         两种算法的时间复杂度均为O（1）。
+    
+    #####顺序表和链表的比较
+    
+    1. **基于空间的考虑**
+    
+       ​	存储密度:是指结点数据本身所占的存储量和整个结点结构所占的存储量之比。
+    
+       ​	存储密度越大，存储空间的利用率就越高。
+    
+       ​	**当线性表的长度变化较大，难以估计其存储规模时，以采用动态链表作为存储结构为好。**
+    
+       ​	**当线性表的长度变化不大，容易事先确定其大小时，为了节约存储空间，宜采用顺序表作为存储结构。**
+    
+    2. **基于时间的考虑**
+    
+       ​	若线性表的操作主要是进行进行查找，采用顺序表做存储结构为宜。
+    
+       ​	对于频繁进行插入和删除的线性表，采用链表作为存储结构。
+    
+    3. **例子**
+    
+       1. 从顺序表中删除具有最小值的元素并由函数返回，空出的位置由最后一个元素填补，若线性表为空，则显示错误信息并退出。
+    
+          ```c
+          DataType DMValue(SeqList *L)
+          {
+            DataType x, y;
+            int i, k;
+            
+            if ( ListEmpty(L) ) {
+              printf("list is empty! \n");
+              return;
+            }
+            
+            x = L->data[0];
+            k = 0;
+            
+            for ( i = 1; i < L->length; i++ ) {
+              y	=	L->data[i];
+              if (y	<	x) {
+                x	=	y; 
+                k = i;
+              }
+              
+            }
+            L->data[k] = L->data[L->length-1];
+            L->length--;
+            return x;
+          }
+          ```
+    
+       2. 从顺序表里删除具有给定值x的所有元素
+    
+          ```c
+          void delelte(SeqList *L, DataType x)
+          {
+            
+            int i=0,j;
+            while(i < L->length ){
+              
+              if( L->data[i]  == x) {
+                
+                
+                	for(j=i+1;j<L->length;j++){
+                    
+                    L->data[j-1] = L->data[j]; 
+                  }
+                	
+                	L->length--;
+              }
+              
+              i++;
+              
+            }
+            
+          }
+          ```
+    
+       3. 一个单链表（数据域可能相同），其头指针为head，编写一个函数计算数据域为x的结点个数。
+    
+          ```c
+          int count(head, x) 
+            linklist head;
+            Datatype x;
+          {
+            
+            listnode *p;
+            
+            
+            
+            
+          }
+          
+          
+          ```
+    
+          
     
     
     
