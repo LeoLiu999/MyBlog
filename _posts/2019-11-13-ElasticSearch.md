@@ -35,7 +35,7 @@ description: Elastic Search 原理解析
 
    + 类型（type）
 
-     ES的类型可以理解为Mysql中的数据表，通过mapping定义数据结构。
+     ES的类型可以理解为Mysql中的数据表，通过mapping定义数据结构，相当于表结构的描述，描述每个字段的类型。
 
    + Mapping
 
@@ -47,7 +47,7 @@ description: Elastic Search 原理解析
 
    + 文档（document）
 
-     文档是最终的数据，一个文档即为一条记录。
+     文档是最终的数据，一个文档即为一条记录。以JSON格式描述一行数据。
 
      举例：
 
@@ -55,11 +55,72 @@ description: Elastic Search 原理解析
 
      比如诗题、作者、朝代都是 Keyword 类型，诗内容是 Text 类型，而字数是 Integer 类型，再把数据组织成 Json 格式存放进去。
 
-     ![avatar](https://leoliu999.github.io/MyBlog/index.jpg)
+     ```javascript
+     //索引
+     poems
+     //类型
+     'porm':{
+       'properties':{
+            'title':{
+              'type':'keyword',
+            },
+            'author':{
+              'type':'keyword', 
+            },
+            'dynasty':{
+              'type':'keyword',
+            },
+            'words':{
+              'type':'integer',
+            }
+            'content':{
+              'type' : 'text'
+            }  
+       }
+     }
+     
+     //文档
+     {
+       'title':'静夜思',
+       'author':'李白',
+       'dynasty':'唐',
+       'words':20,
+       'content':'床前明月光，疑是地上霜；举头望明月，低头思故乡。' 
+     }
+     ```
+
+     keyword和text的的区别
+
+     keyword类型不会分词，直接根据字符串内容建立反向索引，text类型先进行分词，再建立反向索引。
 
 5. **Elastic Search分布式原理**
 
-6. **ELK系统**
+   * ES数据的分布式存储
 
-7. 
+     ​	ES会对数据进行切分，同时每一个分片会保存多个副本，来保证分布式环境下的高可用。
 
+   * ES的master-slave架构
+
+     ​	在ES中，节点是对等的，节点间会通过自己的一些规则选取集群的master，master会负责集群状态信息的改变，并同步给其他节点。
+
+     ​	建立索引请求->master建立索引->同步到其他slave节点。
+
+     ​	注意：只有建立索引和类型需要经过master，数据的写入有一个简单的routing规则，可以route到集群的任意节点，所以数据的写入压力是分散到整个集群的。
+
+6. **ELKBK系统**
+
+   ES的使用场景不仅是做搜索引擎，可以使用ES搭建ELK系统，用于做日志分析。
+
+   E:Elastic Search  数据存储于搜索
+
+   L:Logstash     数据格式化
+
+   K:Kibana		数据可视化
+
+   B:Beats          数据收集
+
+   K:Kafka          消息队列，可用其他消息队列代替
+
+   Beats收集日志数据，到Logstash作为生产者格式化之后写入Kafka等消息队列，再由Logstash作为消费者取出数据放入ES，最后通过Kibana平台进行数据的可视化。如果再接入一些实时计算模块，还能做实时报警功能。
+
+   
