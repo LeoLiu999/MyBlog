@@ -1,12 +1,14 @@
 ---
 layout : post
 title :  数据结构：线性表
-date : 2019-08-01
+date : 2015-08-01
 categories: 数据结构 线性表
 permalink : DataStructure/LinearTable.html
 description: 数据结构 线性表
 
 ---
+
+**线性表的概念**
 
 线性表的概念：由n(n>=0)个数据元素（结点）a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>....a<sub>n</sub>组成的有限序列，记作(a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>....a<sub>n</sub>)。
 

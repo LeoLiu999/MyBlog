@@ -13,7 +13,7 @@ sass:
 permalink: /posts/:title/
 texture:
   title: Leo的博客
-  tagline: 软件攻城狮|PHP、Python
+  tagline: 架构师、资深开发工程师|PHP、Python、Go
   date_format: "%Y-%m-%d"
   style: blue
   showNav: false

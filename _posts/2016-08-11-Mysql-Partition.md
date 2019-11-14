@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Mysql：分区优化
-date:   2019-08-11
+date:   2016-08-11
 categories: Mysql 分区
 permalink : mysql/partition.html
 description: mysql 分区优化
@@ -18,7 +18,7 @@ description: mysql 分区优化
        1. range分区分区字段必须是整数型（或表达式结果为整数）,而range columns分区支持整数（tinyint到bigint）、字符串（char、varchar、binary、varbinary）、日期（date、datetime）。
     2. range分区接受表达式，而range columns不接受表达式，只能是列名。
        3. range columns分区允许多个列，是基于元组的比较，也就是基于字段组的比较，而range只能是一个列。
-   
+  
    + list分区：使用枚举型字段进行分区，该字段值有限且区分度不高。
 
    + hash分区：按给定的分区个数，将数据hash分配到不同的分区。
