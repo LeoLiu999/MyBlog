@@ -94,11 +94,13 @@ vim my_pipeline.conf
 
   ```js
   output{
-  	kafka {
-  		bootstrap_servers => "192.168.80.42:9092"
-  		topic_id         => "test" 
-    }
+          kafka{
+                  bootstrap_servers => ["127.0.0.1:9092"]
+                  topic_id        => "elk_logstash"
+  
+          }
   }
+  
   ```
 
 * output到redis
@@ -216,11 +218,12 @@ input{
 
 	}
 	//从kafka读取
-	kafka {
-		bootstrap_servers => "192.168.80.42:9092"
-		topic_id         => "test" 
-		auto_offset_reset => "earliest"
-  }
+	
+  kafka{
+                bootstrap_servers => ["127.0.0.1:9092"]
+                topics       => "elk_logstash"
+                auto_offset_reset => "earliest"
+        }
 	
   output {
 
@@ -323,6 +326,12 @@ select * from sys_log
 
 ```shell
 bin/logstash -f my-pipeline.conf --config.reload.automatic #--config.reload.automatic选项的意思是启用自动配置加载，以至于每次你修改完配置文件以后无需停止然后重启Logstash
+bin/logstash -f ./myconfigdir/ --config.reload.automatic #一次启动多个配置的logstash
+
+# 一机多实例，同一个配置文件，启动时只需更改数据路径
+./bin/logstash -f test.conf --path.data=/usr/local/logdata/
+# 多台机器 logstash配置文件group_id 相同即可
+
 ```
 
 注：当修改了logstash配置文件的时候 无需重启logstash，但是如果input为filebeat，需要强制filebeat重头读取日志文件，为了这样做，你需要在终端停止filebeat，然后删除filebeat的注册文件，再重启filebeat。
