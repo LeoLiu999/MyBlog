@@ -107,7 +107,7 @@ description: Elastic Search 原理解析
 
      ​	注意：只有建立索引和类型需要经过master，数据的写入有一个简单的routing规则，可以route到集群的任意节点，所以数据的写入压力是分散到整个集群的。
 
-6. **ELKBK系统**
+6. **ELK+Beats+kafka系统**
 
    ES的使用场景不仅是做搜索引擎，可以使用ES搭建ELK系统，用于做日志分析。
 
