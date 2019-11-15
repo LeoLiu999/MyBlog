@@ -657,6 +657,12 @@ Logstash/vendor/bundle/jruby/1.9/gems/logstash-patterns-core-4.1.2/patterns
 
      该指标用于指定worker等待时间的超时时间，如果worker在该时间内没有等到pipeline.batch.size个事件，那么将直接开始执行filter和output而不再等待。
 
+**ELK+Beats+Kafka架构图**
+
+![avater](../images/elkbk_0.png)
+
+![avater](../images/elkbk_1.png)
+
 
 
 
