@@ -5,6 +5,7 @@ date:   2016-08-11
 categories: Mysql 分区
 permalink : mysql/partition.html
 description: mysql 分区优化
+show : true
 ---
 
 1. **分区类型**

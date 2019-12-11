@@ -5,7 +5,7 @@ date : 2015-08-01
 categories: 数据结构 线性表
 permalink : DataStructure/LinearTable.html
 description: 数据结构 线性表
-
+show : true
 ---
 
 **线性表的概念**

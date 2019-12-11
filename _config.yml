@@ -1,7 +1,7 @@
 title: Leo的博客
 author: LeoLiu
 email: liukai5455@163.com
-description: Leo的博客
+description: Leo的博客(学习、记录之用)
 show_excerpts: true # set to true to show excerpts on the homepage
 baseurl: 
 
@@ -13,7 +13,7 @@ sass:
 permalink: /posts/:title/
 texture:
   title: Leo的博客
-  tagline: 架构师、资深开发工程师|PHP、Python、Go
+  tagline: 此博客供个人学习、记录之用
   date_format: "%Y-%m-%d"
   style: blue
   showNav: false

@@ -5,6 +5,7 @@ date:   2015-07-31
 categories: 数据结构
 permalink : DataStructure/BasicConcept.html
 description: 数据结构的基本概念
+show : true
 ---
 
 **基本概念**

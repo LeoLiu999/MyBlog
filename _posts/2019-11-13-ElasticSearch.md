@@ -5,6 +5,7 @@ date:   2019-11-13
 categories: ElasticSearch ES原理
 permalink : ElasticSearch/BasicConcept.html
 description: Elastic Search 原理解析
+show : true
 ---
 
 1. **倒排索引**

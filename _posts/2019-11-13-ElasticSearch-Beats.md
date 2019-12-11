@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  ELKB系列之FileBeat
+title:  ElasticSearch-ELKB系列之FileBeat
 date:   2019-11-14
 categories: ElasticSearch Beats FileBeat
 permalink : ElasticSearch/FileBeat.html
 description: ELKB之FileBeat
+show : true
 ---
 
 ##### Beats简介
