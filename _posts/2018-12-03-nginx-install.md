@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  nginx1.16编译安装
-date:   2019-12-03
+date:   2018-12-03
 categories: nginx
 permalink : nginx/configureInstall.html
 description: nginx1.16编译安装

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  iptables 设置
-date:   2019-12-03
+date:   2016-12-03
 categories: iptables
 permalink : iptables/config.html
 description: iptables 设置
@@ -82,9 +82,12 @@ chmod +x
 
 ```
 
-配置了规则之后发现无法连通外网，
+配置好之后发现本机无法连通外网，添加以下配置
 
-
+```shell
+#允许本机访问外网 能访问ip 不能访问域名 域名暂时没找到如何配置
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+```
 
 
 

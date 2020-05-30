@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  mysql5.7编译安装
-date:   2019-12-03
+date:   2018-12-03
 categories: mysql
 permalink : mysql/configureInstall.html
 description: mysql5.7编译安装
