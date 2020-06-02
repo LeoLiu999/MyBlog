@@ -8,6 +8,8 @@ description: docker
 show : true
 ---
 
+**docker 常用命令：**
+
 ```shell
 docker --version #查看版本
 docker search xxx #搜索镜像
@@ -30,6 +32,5 @@ docker logs --tail=50 -t -f  containerId  #查看日志
 docker logs -t  57e919bac666   >> logs_error.txt #将日志输出到文件
 docker exec -it containerId -sh #进入docker查看
 docker save -o web-qb_v1.0.3.tar web-qb:v1.0.3 #导出docker
-
 ```
 
