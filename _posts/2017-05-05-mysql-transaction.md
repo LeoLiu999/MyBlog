@@ -1,4 +1,4 @@
-```
+---
 layout: post
 title:  mysql事务隔离级别
 date:   2017-05-05
@@ -6,7 +6,7 @@ categories: mysql
 permalink : mysql/transaction.html
 description: mysql 事务隔离级别
 show : true
-```
+---
 
 ##### mysql的事务隔离级别
 
